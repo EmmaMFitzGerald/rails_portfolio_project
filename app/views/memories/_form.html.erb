@@ -1,5 +1,7 @@
-<%= form_for (@memory) do |f| %>
+<%= form_for @memory, url: child_memories_path(@child) do |f| %>
   <%= f.label :title %>
+  <%= f.hidden_field :child_id %>
+  <%= f.hidden_field :user_id %>
   <%= f.text_field :title %>
   <%= f.label :content %>
   <%= f.text_area :content %>

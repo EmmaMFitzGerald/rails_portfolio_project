@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  resources :children
+  get 'category/title'
+  root 'welcome#home'
+
   resources :users
+
+  resources :children do
+    resources :memories
+  end
+
   resources :categories
-  resources :memories, only: [:index, :show, :new, :create, :edit, :update]
+  # resources :memories
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

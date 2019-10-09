@@ -1,7 +1,11 @@
 class MemoriesController < ApplicationController
 
   def index
+    if params[:child_id]
+      @memories = Child.find(params[:child_id]).memories
+    else
     @memories = Memory.all
+    end
   end
 
   def show
@@ -9,7 +13,8 @@ class MemoriesController < ApplicationController
   end
 
   def new
-    @memory = Memory.new
+    @child = Child.find(params[:child_id])
+    @memory = @child.memories.build
   end
 
   def create
@@ -36,6 +41,6 @@ class MemoriesController < ApplicationController
   private
 
   def memory_params
-    params.require(:memory).permit(:title, :content)
+    params.require(:memory).permit(:title, :content, :child_id, :user_id)
   end
 end
