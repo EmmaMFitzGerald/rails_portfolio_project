@@ -1,6 +1,7 @@
 <% @memories.each do |memory| %>
   <ul>
     <li>Title: <%= memory.title %></li>
+    <li>Category: <%= memory.category.name  %>
     <li>Content: <%= memory.content %></li>
     <%= link_to "Create a new memory", new_child_memory_path %>
   </ul>

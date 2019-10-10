@@ -9,7 +9,9 @@ class ChildrenController < ApplicationController
 
   def new
     @child = Child.new
-    @child.memories.build
+    memory = @child.memories.build
+    category = Category.new
+    memory.category = category
   end
 
   def create
@@ -28,7 +30,8 @@ class ChildrenController < ApplicationController
     params.require(:child).permit(:name, :birthday, memories_attributes: [
         :title,
         :content,
-        :user_id
+        :user_id,
+        category_attributes:[:name]
     ])
   end
 end

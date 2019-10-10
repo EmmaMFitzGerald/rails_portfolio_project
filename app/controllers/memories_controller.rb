@@ -41,6 +41,6 @@ class MemoriesController < ApplicationController
   private
 
   def memory_params
-    params.require(:memory).permit(:title, :content, :child_id, :user_id)
+    params.require(:memory).permit(:title, :content, :child_id, :user_id, categories_attributes:[:name])
   end
 end
