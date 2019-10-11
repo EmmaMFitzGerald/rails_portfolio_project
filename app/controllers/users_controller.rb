@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
+  def index
+    @user = User.all
+  end 
+
   def show
-    if current_user
-      @user = User.new
-    else
-      redirect_to sign_in_path
-    end
- end
+    @user = User.find(params[:id])
+  end
 
  def new
    @user = User.new
@@ -16,12 +16,30 @@ class UsersController < ApplicationController
    @user = User.new(user_params)
    if @user.save
      flash[:success] = "Welcome #{@user.name} to Memory Box"
-     session[:user] = @user
      redirect_to user_path(@user)
    else
      render 'new'
    end
  end
+
+ def edit
+  @user = User.find(params[:id])
+ end 
+
+ def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to @user
+    else 
+      render :edit
+    end
+ end 
+
+ def destroy
+  @user = User.find(params[:id])
+  @user.destroy
+  redirect_to users_path
+ end 
 
  private
 
