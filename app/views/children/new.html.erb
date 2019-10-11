@@ -30,7 +30,7 @@
     <% end  %>
     <%= mem.label :content %>
     <%= mem.text_area :content %>
-    <%= mem.hidden_field :user_id, value: current_user.id %>
+    <%= mem.hidden_field :user_id, value: @user.id %>
   <% end  %>
   <%= f.submit %>
 <% end %>

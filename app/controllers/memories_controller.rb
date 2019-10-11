@@ -10,8 +10,11 @@ class MemoriesController < ApplicationController
 
   def show
     @memory = Memory.find(params[:id])
-    
   end
+
+  def all_memories
+    @memory = Memory.all
+  end 
 
   def new
     @child = Child.find(params[:child_id])

@@ -1,5 +1,5 @@
 class ChildrenController < ApplicationController
-  
+
   def index
     @children = Child.all
   end
@@ -13,6 +13,7 @@ class ChildrenController < ApplicationController
     memory = @child.memories.build
     category = Category.new
     memory.category = category
+    @user = User.find(session[:user_id]) if session[:user_id]
   end
 
   def create

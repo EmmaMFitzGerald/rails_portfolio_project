@@ -5,14 +5,14 @@
     <% end %>
 </ul>
 
-<p>Children you've made memories for</p>
-<ul>    
-  <% @children_with_memories.each do |child| %>
-    <li><%= link_to child.name, child_path(child) %></li>
-    <% end %>
-</ul>
+<p><%= link_to "Create a Child", new_child_path %>
+
+<%= if @user.children_with_memories %>
+    <p>Children you've made memories for</p>
+    <ul>    
+        <% @children_with_memories.each do |child| %>
+            <li><%= link_to child.name, child_path(child) %></li>
+            <% end %>
+        </ul>
+ <% end %>
 <%= link_to "Edit Your Profile", edit_user_path(@user)%>
-<%= link_to "Delete this user", user_path(@user), 
-          method: :delete, 
-data: {confirm: "Are you sure you want to delete this user and all it's memories?"} %>
-<%= link_to "Log out", logout_path, method: :delete %>

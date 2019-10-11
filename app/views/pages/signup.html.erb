@@ -1,25 +1,5 @@
-<% if @user.errors.any? %>
-<h2>The following errors prevented the User from being saved</h2>
-<ul>
-<% @user.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-</ul>
-<% end %>
 
-<%# <%# <%= form_for(@user) do |f| %>
-  <%# # <%= f.label :email%>
-  <%# # <%= f.text_field :email, placeholder: "Enter Email" %>
-  <%# # <%= f.label :name %>
-  <%# <%= f.text_field :name, placeholder: "Enter Name"%>
-  <%# <%= f.label :password %>
-  <%# <%= f.password_field :password, placeholder: "Choose a password" %>
-  <%# <%= f.label :password_confirmation, "Confirm Password" %>
-  <%# <%= f.password_field :password_confirmation, placeholder: "Confirm password" %>
-  <%# <%= f.submit %>
-<%# <% end %> 
-
- <div class="container">    
+    <div class="container">    
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading">
@@ -35,12 +15,12 @@
                                     
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Email">                                        
+                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">                                        
                                     </div>
                                 
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="Password">
+                                        <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
                                     </div>
                                     
 
@@ -58,8 +38,7 @@
                                     <!-- Button -->
 
                                     <div class="col-sm-12 controls">
-                                    <%= link_to "Login", login_path, class:"btn btn-success", id:"btn-login" %>
-                                      <%# <a id="btn-login" href="#" class="btn btn-success">Login  </a> %>
+                                      <a id="btn-login" href="#" class="btn btn-success">Login  </a>
                                       <a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>
 
                                     </div>
@@ -73,7 +52,6 @@
                                         <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
                                             Sign Up Here
                                         </a>
-                                        <%= link_to "Sign Up Here", signup_path, onClick:"$('#loginbox').hide(); $('#signupbox').show()"%>
                                         </div>
                                     </div>
                                 </div>    
@@ -160,4 +138,3 @@
                 
          </div> 
     </div>
-
