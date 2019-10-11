@@ -4,7 +4,7 @@ class MemoriesController < ApplicationController
     if params[:child_id]
       @memories = Child.find(params[:child_id]).memories
     else
-    @memories = Memory.all
+      @memories = Memory.all
     end
   end
 

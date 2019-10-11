@@ -1,5 +1,5 @@
 
-<div class= "container">
+All Children
 <% @children.each do |child| %>
 <ul>
   <li>Name: <%= link_to child.name, child_path(child) %> - Birthday: <%= child.birthday %></li>

@@ -1,4 +1,16 @@
 <%= @user.name %>'s Children</h4>
+<ul>
+    <% @children.each do |child| %>
+    <li><%= link_to child.name, child_path(child) %></li>
+    <% end %>
+</ul>
+
+<p>Children you've made memories for</p>
+<ul>    
+  <% @children_with_memories.each do |child| %>
+    <li><%= link_to child.name, child_path(child) %></li>
+    <% end %>
+</ul>
 <%= link_to "Edit Your Profile", edit_user_path(@user)%>
 <%= link_to "Delete this user", user_path(@user), 
           method: :delete, 

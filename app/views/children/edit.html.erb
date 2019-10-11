@@ -1,4 +1,12 @@
 Edit child
+<% if @child.errors.any? %>
+<h2>The following errors prevented the child from being changed</h2>
+<ul>
+<% @child.errors.full_messages.each do |msg| %>
+<li><%= msg %></li>
+<% end %>
+</ul>
+<% end %>
 
  <%= form_for(@child) do |f| %>
 

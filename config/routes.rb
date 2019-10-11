@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'category/title'
-  root 'welcome#home'
+  root 'pages#home'
 
   get '/signup', to: 'users#new'
   get '/login', to: 'sessions#new'

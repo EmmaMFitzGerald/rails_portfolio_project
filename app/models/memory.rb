@@ -7,9 +7,9 @@ class Memory < ApplicationRecord
   belongs_to :category
 
   validates :user_id, presence: :true
-  validates :child_id, presence: :true
 
-  default_scope -> {order(updated_at: :desc)}
+
+  # default_scope -> {order(updated_at: :desc)}
 
   accepts_nested_attributes_for :category
 
