@@ -2,8 +2,20 @@
   <%= f.label :title %>
   <%= f.hidden_field :child_id %>
   <%= f.hidden_field :user_id %>
+    <%= f.fields_for :category do |c| %>
+       <%= c.label :category, "Category "%>
+       <%= c.text_field :name, list: "categories_autocomplete" %>
+        <datalist id="categories_autocomplete">
+          <% Category.all.each do |category| %>
+            <option value="<%= category.name %>">
+          <% end %>
+        </datalist>
+    <% end  %>
   <%= f.text_field :title %>
   <%= f.label :content %>
   <%= f.text_area :content %>
   <%= f.submit %>
 <% end %>
+
+
+   

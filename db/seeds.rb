@@ -6,9 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 #
+
 Memory.destroy_all
+
 User.destroy_all
+
 Child.destroy_all
+
 
 user_1 = User.create(email: "emma@gmail.com", name: 'Emma', password:"123456")
 user_2 = User.create(email: "erica@gmail.com", name: 'Erica', password:"123456")
@@ -22,7 +26,7 @@ child_4 = Child.create(name: 'Sarah', birthday: '1999-10-12', user_id: user_4.id
 
 cat_1 = Category.create(name: 'Milestone')
 cat_2 = Category.create(name: 'Funny memory')
-cat_3 = Category.create(name: 'Accomplisment')
+cat_3 = Category.create(name: 'Accomplishment')
 cat_4 = Category.create(name: 'Story')
 
 Memory.create(title: "Baby's first words", content: "Today the baby said her first word - Dada!", child_id: child_1.id, user: user_1, category_id: cat_1.id)

@@ -3,6 +3,8 @@
     <li>Title: <%= memory.title %></li>
     <li>Category: <%= memory.category.name  %>
     <li>Content: <%= memory.content %></li>
-    <%= link_to "Create a new memory", new_child_memory_path %>
+    <%= link_to "Edit Memory", edit_child_memory_path(memory.child, memory) %>
+    <%= link_to "Delete Memory", child_memory_path(memory.child, memory), method: :delete, data: { confirm: "Are you sure you want to delete this memory forever?" }%>
   </ul>
 <% end %>
+<%= link_to "Create a new memory", new_child_memory_path %>

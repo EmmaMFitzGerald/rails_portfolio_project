@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'category/title'
   root 'welcome#home'
 
-  resources :users
+  get '/signup', to: 'users#new'
+
+  resources :users, except: [:new]
 
   resources :children do
     resources :memories
