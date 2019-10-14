@@ -12,7 +12,7 @@
     <ul>    
         <% @children_with_memories.each do |child| %>
             <li><%= link_to child.name, child_path(child) %></li>
-            <% end %>
+        <% end %>
         </ul>
  <% end %>
 <%= link_to "Edit Your Profile", edit_user_path(@user)%>

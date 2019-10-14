@@ -1,5 +1,6 @@
 <%= form_for @memory, url: child_memories_path(@child) do |f| %>
   <%= f.label :title %>
+  <%= f.text_field :title %>
   <%= f.hidden_field :child_id %>
   <%= f.hidden_field :user_id %>
     <%= f.fields_for :category do |c| %>
@@ -11,9 +12,10 @@
           <% end %>
         </datalist>
     <% end  %>
-  <%= f.text_field :title %>
   <%= f.label :content %>
   <%= f.text_area :content %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
   <%=  f.label "Add a picture to your memory!"%>
   <%= f.file_field :avatar %>
   <%= f.submit %>

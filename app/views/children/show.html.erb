@@ -1,6 +1,10 @@
 
 <%= @child.name %>'s Profile Page
 
-
-
-<%= link_to "#{@child.name}'s Memories", child_memories_path(@child) %>
+<% if @child.avatar.attached? %>
+    <image src=<%=(url_for(@user.avatar)%>/>
+<% end %>
+<% if child.memories.any? %>
+    <%= link_to "#{@child.name}'s Memories", child_memories_path(@child) %>
+<% else %>
+  <p><%= @child.name %> doesn't have any memories yet! <%= link_to "Create a Memory", new_child_memory_path(@child) %>
